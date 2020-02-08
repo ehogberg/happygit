@@ -1,0 +1,4 @@
+;; You'll need to create an OAuth Github token, if you don't already have one.
+;; https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line
+
+{:dev {:env {:github-token "YOUR-GITHUB-TOKEN-HERE"}}}
