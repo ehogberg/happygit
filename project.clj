@@ -9,5 +9,7 @@
                  [cheshire "5.9.0"]
                  [environ "1.1.0"]]
   :target-path "target/%s"
-  :plugins [[lein-environ "1.1.0"]]
+  :main ^:skip-aot happygit.core
+  :aliases {"past-month" ["run" "-m" "happygit.core" "past-month"]}
+  :plugins [[lein-environ "1.1.0" :hooks false]]
   :profiles {:uberjar {:aot :all}})

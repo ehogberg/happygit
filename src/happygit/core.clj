@@ -149,6 +149,13 @@
   (otter-happiness-since (adjusted-date :first-day-of-month)))
 
 
+(defn -main
+  [action & rest]
+  (case action
+    "past-month" (println (otter-happiness-since-30-days-ago))
+    (println "Unknown action:" action)))
+
+
 (comment
   (otter-happiness-since-30-days-ago)
   (otter-happiness-since-a-year-ago)
