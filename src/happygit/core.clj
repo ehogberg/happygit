@@ -123,14 +123,14 @@
   "Calculate happiness averages for some of our
    favorite repos."
   [since]
-  (->> ["loanarranger" "bankbucl" "laalaaland" "leadzeppelin" "audit"]
+  (->> ["loanarranger" "bankbucl" "laalaaland" "leadzeppelin" "audit" "hammurabi"]
        (map #(future {(keyword %) (happiness-since % since)}))
        (map deref)))
 
 
 ;; Some self-explanatory helpers.
 (defn otter-happiness-since-a-year-ago []
-  (otter-happiness-since (days-ago 360)))
+  (otter-happiness-since (days-ago 365)))
 
 
 (defn otter-happiness-since-a-week-ago []
@@ -152,7 +152,8 @@
 (defn -main
   [action & rest]
   (case action
-    "past-month" (println (otter-happiness-since-30-days-ago))
+    "past-month" (do (println (otter-happiness-since-30-days-ago))
+                     (System/exit 0))
     (println "Unknown action:" action)))
 
 
